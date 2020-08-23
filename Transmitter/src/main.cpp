@@ -17,6 +17,8 @@ void gather_data(packet * packets, uint8_t &size) {
     packets[i].id = RADIO_ID;
     packets[i].type = get_sensor_type(i);
     packets[i].value = get_sensor_value(i);
+
+    packets[i].checksum = generate_checksum(packets[i]);
   }
 
   size = get_sensor_count();
@@ -25,8 +27,8 @@ void gather_data(packet * packets, uint8_t &size) {
 void setup() 
 {
   init_radio(RADIO_PIN);
-  enable_sensor(TEMPERATURE, &bme280_t);
-  enable_sensor(PRESSURE, &bme280_p);
+  enable_sensor(TEMPERATURE, &test_t);
+  enable_sensor(PRESSURE, &test_p);
 }
 
 void loop()

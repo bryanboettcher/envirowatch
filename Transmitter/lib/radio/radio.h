@@ -15,7 +15,7 @@ struct packet {
 
 void init_radio(uint8_t);
 void transmit_data(packet *, uint8_t);
-uint8_t get_sensor_count();
+uint8_t generate_checksum(packet);
 
 #define DEFINED_RADIO
 #endif

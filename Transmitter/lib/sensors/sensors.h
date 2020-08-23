@@ -1,12 +1,12 @@
 #include <Arduino.h>
-#include "test/test_sensors.h"
+#include "testing/test_sensors.h"
 #include "bme280/bme280_sensors.h"
 
 #ifndef DEFINED_SENSORS
 
 #define MAX_SENSORS 16
 
-typedef enum {
+typedef enum : uint8_t {
     NUMBER,             // just a raw number (uint16)
     TEMPERATURE,        // in centi-Kelvin
     HUMIDITY,           // 0 - 65535 = 0 - 100%
