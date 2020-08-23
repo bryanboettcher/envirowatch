@@ -12,7 +12,7 @@
 Napper napper;
 
 void gather_data(packet * packets, uint8_t &size) {
-  for(uint8_t i = 0; i < get_sensor_count(); i++) {
+  for (uint8_t i = 0; i < get_sensor_count(); i++) {
     packets[i].version = 1;
     packets[i].id = RADIO_ID;
     packets[i].type = get_sensor_type(i);
@@ -22,16 +22,11 @@ void gather_data(packet * packets, uint8_t &size) {
   size = get_sensor_count();
 }
 
-uint16_t random_number() {
-  return 4; // chosen by fair dice roll
-}
-
 void setup() 
 {
   init_radio(RADIO_PIN);
-  //enable_sensor(value_type::TEMPERATURE, &test_t);
-  enable_sensor(value_type::PRESSURE, &test_p);
-  enable_sensor(value_type::NUMBER, &random_number);
+  enable_sensor(TEMPERATURE, &bme280_t);
+  enable_sensor(PRESSURE, &bme280_p);
 }
 
 void loop()

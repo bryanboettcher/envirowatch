@@ -6,7 +6,7 @@
 
 #define MAX_SENSORS 16
 
-enum value_type {
+typedef enum {
     NUMBER,             // just a raw number (uint16)
     TEMPERATURE,        // in centi-Kelvin
     HUMIDITY,           // 0 - 65535 = 0 - 100%
@@ -18,7 +18,7 @@ enum value_type {
     BRIGHTNESS,         // unsure of unit                
     DISTANCE,           // in cm
     AIRSPEED,           // in cm/s
-};
+} value_type;
 
 typedef uint16_t (*read_sensor)();
 

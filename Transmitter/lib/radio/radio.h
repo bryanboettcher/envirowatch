@@ -6,7 +6,7 @@
 #ifndef DEFINED_RADIO
 
 struct packet {
-  uint8_t version;
+  uint8_t version:8;
   uint16_t id;
   uint16_t value;
   value_type type;

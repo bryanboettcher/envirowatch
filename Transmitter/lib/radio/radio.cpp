@@ -7,7 +7,7 @@ void init_radio(uint8_t pin) {
 
 void transmit_data(packet * packets, uint8_t size) {
 
-  while(size --> 0) {
+  for (uint8_t i = 0; i < size; i++) {
     uint8_t buffer[sizeof(packet)];
     memcpy(buffer, &packets[size], sizeof(packet));
     vw_send(buffer, sizeof(packet));
