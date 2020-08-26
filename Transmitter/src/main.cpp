@@ -9,8 +9,6 @@
 #include "sensors.h"
 #include "radio.h"
 
-Napper napper;
-
 void gather_data(packet * packets, uint8_t &size) {
   for (uint8_t i = 0; i < get_sensor_count(); i++) {
     packets[i].version = 1;
@@ -37,5 +35,5 @@ void loop()
   uint8_t size = MAX_SENSORS;
   gather_data(sensor_data, size);
   transmit_data(sensor_data, size);
-  napper.napminutes(1);
+  delay(60000);
 }
