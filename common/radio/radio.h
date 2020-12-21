@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <VirtualWire.h>
 
-#include "sensors.h"
+#include "../sensors/sensors.h"
 
 #ifndef DEFINED_RADIO
 

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "transmitter"
+		},
+		{
+			"path": "receiver"
+		},
+		{
+			"path": "common"
+		}
+	],
+	"settings": {}
+}
